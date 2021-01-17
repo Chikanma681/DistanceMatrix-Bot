@@ -31,59 +31,26 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
+- intent: two_locations_wanted
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
+    - I want to go from [London](start_city) to [Abuja](end_city)
+    - I intend to move from [Camrose](start_city) to [Edmonton](end_city)
+    - I am currently in [Las Vegas](start_city) to [Los Angeles](end_city)
+    - I am currently in [Abu Dhabi](start_city) to [Dubai](end_city)
+    - I want to go from [Dublin](start_city) to [Manchester](end_city)
+    - I endeavour to transit from [California](start_city) to [Nevada](end_city)
+    - I want to move from [British Columbia](start_city) to [Birmingham](end_city)
+    - I intend to transit from [Leicester](start_city) to [Sheffield](end_city)
+    - I want to go from to [Ottawa](start_city) to [Hamilton](end_city)
+    - I want to go from [Calgary](start_city) to [Toronto](end_city)
+    - I intend to move from [Quebec City](start_city) to [Montreal](end_city)
+    - I want to go from [Thunder Bay](start_city) to [Windsor](end_city)
+    - I want to move from [Port Harcourt](start_city) to [Benin](end_city)
+    - I want to move from [Abuja](start_city) to [Dakar](end_city)
+    - My current location is [Seattle](start_city) and my final destination [Colorada](end_city)
+    - My starting location is [Auckland](start_city) and my destination is [Christchruch](end_city)
+    - My current location is [Johannesburg](start_city) and my destination is [Kumasi](end_city)
+    
 - intent: bot_challenge
   examples: |
     - are you a bot?
