@@ -9,11 +9,13 @@ here the base environment's name is project and we're using python3.6 has the de
 
 inside anaconda environment be sure to install rasa using command:
 pip install rasa
+In order to run the custom action: First rasa run --enable-api then rasa run actions
 
 # Running Distance Matrix Bot
 
 Be sure to cd into the my_project folder before running the command to set up the local server:
 python .\manage.py runserver
+Then integrate the django server with the rasa server with this command rasa run -m models --enable-api --cors "*" --debug
 click the link that appears in the terminal it should appear like http://127.0.0.1:800/
 a pop up screen should appear and be sure to add /myapp to the end of the link to interact with the matrix bot! Be sure to say hello and ask the bot to compute the distance between any two cities, towns etc...
 
