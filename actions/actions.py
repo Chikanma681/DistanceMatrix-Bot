@@ -1,27 +1,36 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
+from typing import Any, Text, Dict, List
+import requests,json
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+import os
 
+api_key = os.environ.get('api')
+class ActionDistanceMatrix(Action):
 
-# This is a simple example for a custom action which utters "Hello World!"
+    def name(self) -> Text:
+        return "action_find_distance"
 
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        start_location = tracker.get_slot("start_city")
+        end_location = tracker.get_slot("end_city")
+        url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
+        request_value =  requests.get(url+"origins="+start_location+"&destinations="+end_location+"&key="+api_key)
+        access = request_value.json()
+
+        time_text = access['rows'][0]['elements'][0]['duration']['text']
+        distance_text = access['rows'][0]['elements'][0]['distance']['text']
+        
+        if (start_location or end_location) is None:
+            rv = "Sorry we couldn't we find the distance matrix.\nWe couldn't identify either your current location or destination"
+        else:
+            try:
+                rv = f"The distance between {start_location} and {end_location} is {time_text}"
+            except:
+                rv = "Sorry we couldn't we find the distance matrix.\nPlease try rephrasing"
+
+        dispatcher.utter_message(text=rv)
+
+        return []
