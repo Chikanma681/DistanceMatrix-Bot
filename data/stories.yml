@@ -7,14 +7,15 @@ stories:
     - action: utter_greet
     - intent: two_locations_wanted
     - action: utter_hang_on
+    - action: action_find_distance
 
 - story: short path
   steps:
   - intent: two_locations_wanted
   - action: utter_hang_on
+  - action: action_find_distance
 
-
-- story: interactive_story_1
+- story: interactive
   steps:
   - intent: greet
   - action: utter_greet
@@ -27,6 +28,7 @@ stories:
   - slot_was_set:
     - end_city: Calgary
   - action: utter_hang_on
+  - action: action_find_distance
 
 - story: interactive_story_1
   steps:
@@ -39,3 +41,139 @@ stories:
   - slot_was_set:
     - end_city: Dakar
   - action: utter_hang_on
+  - action: action_find_distance
+
+- story: interactive_story
+  steps:
+  - intent: two_locations_wanted
+    entities:
+    - end_city: Abuja
+  - slot_was_set:
+    - end_city: Abuja
+
+- story: interactive_story_2
+  steps:
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Lagos
+    - end_city: Abuja
+  - slot_was_set:
+    - start_city: Lagos
+  - slot_was_set:
+    - end_city: Abuja
+  - action: utter_hang_on
+  - action: action_find_distance
+
+- story: try
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: two_locations_wanted
+    entities:
+    - start_city: London
+    - end_city: Manchester
+  - slot_was_set:
+    - start_city: London
+  - slot_was_set:
+    - end_city: Manchester
+  - action: utter_hang_on
+  - action: action_find_distance
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Nigeria
+    - end_city: Ghana
+  - slot_was_set:
+    - start_city: Nigeria
+  - slot_was_set:
+    - end_city: Ghana
+  - action: utter_hang_on
+  - action: action_find_distance
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Edmonton
+    - end_city: Dubai
+  - slot_was_set:
+    - start_city: Edmonton
+  - slot_was_set:
+    - end_city: Dubai
+  - action: utter_hang_on
+  - action: action_find_distance
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Seattle
+    - end_city: Colarado
+  - slot_was_set:
+    - start_city: Seattle
+  - slot_was_set:
+    - end_city: Colarado
+  - action: utter_hang_on
+  - action: action_find_distance
+
+- story: interactive_story_1
+  steps:
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Edmonton
+    - end_city: Camrose
+  - slot_was_set:
+    - start_city: Edmonton
+  - slot_was_set:
+    - end_city: Camrose
+  - action: utter_hang_on
+  - action: action_find_distance
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Lagos
+    - end_city: Abuja
+  - slot_was_set:
+    - start_city: Lagos
+  - slot_was_set:
+    - end_city: Abuja
+  - action: utter_hang_on
+  - action: action_find_distance
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Japan
+    - end_city: Hong Kong
+  - slot_was_set:
+    - start_city: Japan
+  - slot_was_set:
+    - end_city: Hong Kong
+  - action: utter_hang_on
+  - action: action_find_distance
+
+- story: interactive_story_1
+  steps:
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Senegal
+    - end_city: Port Harcourt
+  - slot_was_set:
+    - start_city: Senegal
+  - slot_was_set:
+    - end_city: Port Harcourt
+  - action: utter_hang_on
+  - action: action_find_distance
+
+- story: interactive_story_1
+  steps:
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Senegal
+    - end_city: Edmonton
+  - slot_was_set:
+    - start_city: Senegal
+  - slot_was_set:
+    - end_city: Edmonton
+  - action: utter_hang_on
+  - action: action_find_distance
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Port Harcourt
+    - end_city: San Francisco
+  - slot_was_set:
+    - start_city: Port Harcourt
+  - slot_was_set:
+    - end_city: San Francisco
+  - action: utter_hang_on
+  - action: action_find_distance

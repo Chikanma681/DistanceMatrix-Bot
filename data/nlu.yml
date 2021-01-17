@@ -15,6 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - Hello
 - intent: goodbye
   examples: |
     - good afternoon
@@ -49,6 +50,18 @@ nlu:
     - My current location is [Johannesburg](start_city) and my destination is [Kumasi](end_city)
     - My current location is [Edmonton](start_city) and my final destination is [Calgary](end_city)
     - I want to go from [Abuja](start_city) to [Dakar](end_city)
+    - I want to go from [Lagos](start_city) to [Abuja](end_city)
+    - I want to go from [Lagos](start_city) to [Abuja](end_city)
+    - I want to go from [London](start_city) to [Manchester](end_city)
+    - I want to go from [Nigeria](start_city) to [Ghana](end_city)
+    - My current location is [Edmonton](start_city) and my final destination is [Dubai](end_city)
+    - I intend to transit from [Seattle](start_city) to [Colarado](end_city)
+    - I am going from [Edmonton](start_city) to [Camrose](end_city)
+    - I am going from [Lagos](start_city) to [Abuja](end_city)
+    - I am going from [Japan](start_city) to [Hong Kong](end_city)
+    - I am going from [Senegal](start_city) to [Port Harcourt](end_city)
+    - I am going from [Senegal](start_city) to [Edmonton](end_city)
+    - I am going from [Port Harcourt]{"entity": "start_city", "value": "Port Harcourt"} to [San Fransicso]{"entity": "end_city", "value": "San Francisco"}
 - intent: bot_challenge
   examples: |
     - are you a bot?
