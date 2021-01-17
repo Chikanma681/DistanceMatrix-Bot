@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: two_locations_wanted
   examples: |
     - I want to go from [London](start_city) to [Abuja](end_city)
@@ -50,7 +47,8 @@ nlu:
     - My current location is [Seattle](start_city) and my final destination [Colorada](end_city)
     - My starting location is [Auckland](start_city) and my destination is [Christchruch](end_city)
     - My current location is [Johannesburg](start_city) and my destination is [Kumasi](end_city)
-    
+    - My current location is [Edmonton](start_city) and my final destination is [Calgary](end_city)
+    - I want to go from [Abuja](start_city) to [Dakar](end_city)
 - intent: bot_challenge
   examples: |
     - are you a bot?

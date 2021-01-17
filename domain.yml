@@ -1,14 +1,17 @@
-version: "2.0"
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 
 intents:
-  - greet
-  - goodbye
-  - two_locations_wanted
-  - bot_challenge
+- two_locations_wanted
+- greet
+- goodbye
+- bot_challenge
 
 entities:
-  - start_city
-  - end_city
+- end_city
+- start_city
 
 slots:
   start_city:
@@ -20,28 +23,20 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hey! I am a DistanceMatrix Chatbot and I am here to tell you the distance between two places"
-  - text: "So where is your current location and final location"
-
+  - text: Hey! I am a DistanceMatrix Chatbot and I am here to tell you the distance between two places. So where is your current location and final location
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-  
+  - text: I am a bot, powered by Rasa.
   utter_hang_on:
-  - text: "Ok!! I am processing your request so hang on"
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  - text: Ok!! I am processing your request so hang on
+actions:
+- utter_greet
+- utter_hang_on

@@ -13,3 +13,29 @@ stories:
   - intent: two_locations_wanted
   - action: utter_hang_on
 
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Edmonton
+    - end_city: Calgary
+  - slot_was_set:
+    - start_city: Edmonton
+  - slot_was_set:
+    - end_city: Calgary
+  - action: utter_hang_on
+
+- story: interactive_story_1
+  steps:
+  - intent: two_locations_wanted
+    entities:
+    - start_city: Abuja
+    - end_city: Dakar
+  - slot_was_set:
+    - start_city: Abuja
+  - slot_was_set:
+    - end_city: Dakar
+  - action: utter_hang_on
