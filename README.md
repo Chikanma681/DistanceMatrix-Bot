@@ -19,7 +19,7 @@ Then integrate the django server with the rasa server with this command rasa run
 click the link that appears in the terminal it should appear like http://127.0.0.1:800/
 a pop up screen should appear and be sure to add /myapp to the end of the link to interact with the matrix bot! Be sure to say hello and ask the bot to compute the distance between any two cities, towns etc...
 
- # Examples
+ # Sample Shots
   ![Github Photo 1](assets/images/C1.PNG)
   
   ![Github Photo 2](assets/images/C2.PNG)
