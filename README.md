@@ -1,5 +1,5 @@
 # DistanceMatrix Bot
-The thought process behind this project is to create an automated chatbox which intakes user input in the form of a greeting and more specifically regarding the distance between two geographical locations and return a response with that computation in the form of vehicle travel time in such a way that the bot sounds reasonably human. 
+The thought process behind this project is to create an automated chatbot which intakes user input in the form of a greeting and more specifically regarding the distance between two geographical locations and return a response with that computation in the form of vehicle travel time in such a way that the bot sounds reasonably human. 
 
 # Prerequsites
 Anaconda: for step-by-step installation guide visit https://docs.anaconda.com/anaconda/install/ 
